@@ -10,10 +10,8 @@ fn main() {
         .read_line(&mut decide)
         .expect("failed to read line");
 
-    let decide: String = decide.trim() {
-        ok(String) => String,
-        Err(_) => continue,
-    }
+    let decide: &str = decide.trim();
     println!("you chose {}", decide)
     
+
 }
