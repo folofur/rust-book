@@ -7,9 +7,12 @@ fn main() {
 
     let mut decide = String::new();
     io::stdin()
-        .read_line(&mut guess)
+        .read_line(&mut decide)
         .expect("failed to read line");
 
-    let decide: String = 
-
+    let decide: String = decide.trim() {
+        ok(String) => String,
+        Err(_) => continue,
+    }
+    println!("you chose {}", decide)
 }
