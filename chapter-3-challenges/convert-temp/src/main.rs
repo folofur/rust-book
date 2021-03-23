@@ -11,7 +11,25 @@ fn main() {
         .expect("failed to read line");
 
     let decide: &str = decide.trim();
-    println!("you chose {}", decide)
+    println!("you chose {}", decide);
     
+    if decide == "1" {
+        println!("What is your celcius temperature to convert? (enter a number)");
+        convert("c");
+    } else if decide == "2" {
+        println!("What is your farhenheit temperature to convert? (enter a number");
+        convert("f");
+    }
 
+}
+
+fn convert(t:&str, num:&str) {
+    let mut temp = num;
+    if t == "c" {
+        let temp = num.parse(){
+            Ok(num) => num,
+            Err(_) => continue,
+        }
+        println!("{}" , num)
+    }
 }
