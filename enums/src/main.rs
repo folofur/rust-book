@@ -20,9 +20,8 @@ fn enums()
         Color::Blue => println!("B"),
         Color::RgbColor(0,0,0) |
            Color::Cmyk{cyan:_,magenta:_,yellow:_,black:255} => println!("no color"),
-        
-        Color::RgbColor(r,g,b) => println!("RGB: {}, {}, {}" , r, g, b)
-    
+        Color::RgbColor(r,g,b) => println!("RGB: {}, {}, {}" , r, g, b),
+        _ => println!("catch all other cases")
     }
 }
 fn main() {}
