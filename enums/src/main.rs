@@ -5,7 +5,10 @@ enum Color {
     Red,
     Green,
     Blue,
-    RgbColor(u8, u8, u8)
+    RgbColor(u8, u8, u8),
+    Cmyk{
+        cyan: u8, magenta: u8, yellow: u8, black: u8
+    }
 }
 fn enums() 
 {
@@ -15,8 +18,11 @@ fn enums()
         Color::Red => println!("R"),
         Color::Green => println!("G"),
         Color::Blue => println!("B"),
-        Color::RgbColor(0,0,0) => println!("no color"),
+        Color::RgbColor(0,0,0) |
+           Color::Cmyk{cyan:_,magenta:_,yellow:_,black:255} => println!("no color"),
+        
         Color::RgbColor(r,g,b) => println!("RGB: {}, {}, {}" , r, g, b)
+    
     }
 }
 fn main() {}
