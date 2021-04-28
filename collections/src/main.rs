@@ -20,4 +20,19 @@ fn main() {
         Some(third) => println!("The 3rd element is {}", third),
         None => println!("no 3rd element present"),
     }
+
+    //new String can initialize just like new vec.
+    // a String is actually a wrapper around a vector. 
+    let mut s = String::new();
+
+    // create a String from a string literal
+    // you can do this with any data with "Display" trait
+    let data = "some characters";
+    let mut alt_s = data.to_string();
+    // or
+    let alter_s = "characters to Stringify".to_string();
+    alt_s.push_str("asdf");
+
+    
+
 }
