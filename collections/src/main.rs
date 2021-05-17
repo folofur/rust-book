@@ -1,6 +1,5 @@
 use std::collections::HashMap;
 
-
 fn main() {
     // let v: Vec<i32> = Vec::new();
 
@@ -18,25 +17,23 @@ fn main() {
 
     // or...
     // this way is advantageous because it will not cause the program to crash
-    // because of a reference to some non-existent item. 
+    // because of a reference to some non-existent item.
     // match initial_v.get(2) {
     //     Some(third) => println!("The 3rd element is {}", third),
     //     None => println!("no 3rd element present"),
     // }
 
     //new String can initialize just like new vec.
-    // a String is actually a wrapper around a vector. 
-    let mut s = String::new();
+    // a String is actually a wrapper around a vector.
+    let s = String::new();
 
     // create a String from a string literal
     // you can do this with any data with "Display" trait
     let data = "some characters";
     let mut alt_s = data.to_string();
     // or
-    let alter_s = "characters to Stringify".to_string();
+    let s = "characters to Stringify".to_string();
     alt_s.push_str("asdf");
-
-
 
     let mut scores = HashMap::new();
     scores.insert(String::from("red"), 10);
@@ -48,6 +45,4 @@ fn main() {
     let game: HashMap<_, _> = teams.iter().zip(scores.iter()).collect();
     // hashmaps assume ownership of any data without the "Copy" trait.
     // so "game" has destroyed the strings in the "teams" vector
-
-    
 }
