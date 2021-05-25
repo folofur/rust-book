@@ -1,4 +1,5 @@
 #[cfg(test)]
+
 mod tests {
     use super::*;
     #[test]
@@ -9,6 +10,7 @@ mod tests {
     fn i_fail() {
         panic!("never meant to work");
     }
+    
     #[test]
     fn assert_hold() {
         let larger = Rectangle {
@@ -21,6 +23,19 @@ mod tests {
         };
 
         assert!(larger.can_hold(smaller));
+    }
+    #[test]
+    fn assert_hold_fail() {
+        let larger = Rectangle {
+            length: 12,
+            width: 9,
+        };
+        let smaller = Rectangle {
+            length: 3,
+            width: 4,
+        };
+        // correct case is false, so we add a bang to negate
+        assert!(!smaller.can_hold(larger))
     }
 }
 
