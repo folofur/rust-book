@@ -10,7 +10,6 @@ mod tests {
     fn i_fail() {
         panic!("never meant to work");
     }
-    
     #[test]
     fn assert_hold() {
         let larger = Rectangle {
@@ -18,11 +17,16 @@ mod tests {
             width: 9,
         };
         let smaller = Rectangle {
-            length: 3,
+            length: 13,
             width: 4,
         };
-
-        assert!(larger.can_hold(smaller));
+        // second argument in assert, assert_eq, and assert_ne will be a custom error message!
+        assert!(
+            larger.can_hold(smaller),
+            "We could not fit {} into {}",
+            "larger",
+            "smaller"
+        );
     }
     #[test]
     fn assert_hold_fail() {
