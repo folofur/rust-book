@@ -24,3 +24,28 @@ impl Config {
     Ok(Config { query, filename })
   }
 }
+
+pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+  vec![]
+}
+
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+
+  #[test]
+  fn one_result() {
+    let query = "duct";
+    let contents = "\
+    Rust:
+    fast, safe, productive...
+    choose three!
+    ";
+
+    assert_eq!(
+      vec!["fast, safe, productive..."],
+      search(query,contents)
+    )
+  }
+}
